@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{84F16EA6-F1E7-41A2-AF53-446A1F07467C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Swift.Extensibility</RootNamespace>
+    <AssemblyName>Swift.Extensibility</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Debug\Swift.Extensibility.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Release\Swift.Extensibility.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>SwiftBuiltinsKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Swift.Toolkit">
+      <HintPath>..\packages\Swift.Toolkit.1.0.0-alpha001\lib\net45\Swift.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Input\IDataItemHandler.cs" />
+    <Compile Include="Events\IEventBroker.cs" />
+    <Compile Include="Events\IEventChannel.cs" />
+    <Compile Include="Functions\IFunctionInfo.cs" />
+    <Compile Include="Functions\LambdaFunction.cs" />
+    <Compile Include="Functions\ParameterInfo.cs" />
+    <Compile Include="Input\IDataItemMatcher.cs" />
+    <Compile Include="Input\IDataItemRater.cs" />
+    <Compile Include="Input\IDataItemSource.cs" />
+    <Compile Include="ISwiftExtender.cs" />
+    <Compile Include="Plugins\IPlugin.cs" />
+    <Compile Include="Plugins\PluginMetadataAttribute.cs" />
+    <Compile Include="Services\IInitializationAware.cs" />
+    <Compile Include="Services\IPluginServiceUser.cs" />
+    <Compile Include="Services\Logging\ILogSource.cs" />
+    <Compile Include="Services\Settings\CustomSetting.cs" />
+    <Compile Include="Services\Settings\Header.cs" />
+    <Compile Include="Services\Settings\IntegerSetting.cs" />
+    <Compile Include="Services\Settings\BooleanSetting.cs" />
+    <Compile Include="Services\IShutdownAware.cs" />
+    <Compile Include="Services\Logging\ILogger.cs" />
+    <Compile Include="Services\Logging\ILoggingChannel.cs" />
+    <Compile Include="Services\Logging\ILogMessage.cs" />
+    <Compile Include="Services\Profile\UserProfile.cs" />
+    <Compile Include="Services\Settings\Setting.cs" />
+    <Compile Include="Services\Settings\ISettingsSource.cs" />
+    <Compile Include="Services\Storage\IStorageManager.cs" />
+    <Compile Include="UI\FocusTargets.cs" />
+    <Compile Include="Input\KnownHotkeys.cs" />
+    <Compile Include="Services\IHotkeyService.cs" />
+    <Compile Include="Input\DataItem.cs" />
+    <Compile Include="Functions\Function.cs" />
+    <Compile Include="Input\IInput.cs" />
+    <Compile Include="Input\IInputParser.cs" />
+    <Compile Include="Input\IInputTextCompletionProvider.cs" />
+    <Compile Include="Plugins\IPluginMetadata.cs" />
+    <Compile Include="Services\Profile\IUserProfile.cs" />
+    <Compile Include="Services\IPluginServices.cs" />
+    <Compile Include="Services\Profile\IProfileProvider.cs" />
+    <Compile Include="Services\Settings\ISettingsStore.cs" />
+    <Compile Include="Functions\Suggestion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\IUIService.cs" />
+    <Compile Include="UI\IViewModel.cs" />
+    <Compile Include="UI\MenuItem.cs" />
+    <Compile Include="UI\ViewModelBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="SwiftBuiltinsKey.pfx" />
+    <None Include="_CreateNewNuGetPackage\Config.ps1" />
+    <None Include="_CreateNewNuGetPackage\DoNotModify\CreateNuGetPackage.ps1" />
+    <None Include="_CreateNewNuGetPackage\DoNotModify\New-NuGetPackage.ps1" />
+    <None Include="_CreateNewNuGetPackage\DoNotModify\UploadNuGetPackage.ps1" />
+    <None Include="_CreateNewNuGetPackage\RunMeToUploadNuGetPackage.cmd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_CreateNewNuGetPackage\DoNotModify\NuGet.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataItems\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Dieses Projekt verweist auf mindestens ein NuGet-Paket, das auf diesem Computer fehlt. Aktivieren Sie die Wiederherstellung von NuGet-Paketen, um die fehlende Datei herunterzuladen. Weitere Informationen finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=322105". Die fehlende Datei ist "{0}".</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

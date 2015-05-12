@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Swift.Extensibility.Services.Settings
+﻿namespace Swift.Extensibility.Services.Settings
 {
     /// <summary>
     /// Represents a setting with a custom content. The content can be any object, however, you have to make sure that a proper DataTemplate is in place for it to be rendered.

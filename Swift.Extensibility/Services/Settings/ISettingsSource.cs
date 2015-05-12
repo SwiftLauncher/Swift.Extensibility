@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Swift.Extensibility.Services.Settings
 {
     /// <summary>
     /// Interface for classes that have settings.
     /// </summary>
-    [InheritedExport]
     public interface ISettingsSource
     {
         /// <summary>

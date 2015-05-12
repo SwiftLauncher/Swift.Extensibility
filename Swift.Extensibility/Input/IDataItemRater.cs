@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.Composition;
 
 namespace Swift.Extensibility.Input
 {
     /// <summary>
     /// Interface for DataItem rating services.
     /// </summary>
-    [InheritedExport]
     public interface IDataItemRater
     {
         /// <summary>

@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.Composition;
 
 namespace Swift.Extensibility.Input
 {
     /// <summary>
     /// Interface for DataItem matchers.
     /// </summary>
-    [InheritedExport]
     public interface IDataItemMatcher
     {
         /// <summary>

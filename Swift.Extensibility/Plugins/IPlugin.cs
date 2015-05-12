@@ -4,7 +4,7 @@ using Swift.Extensibility.Services;
 namespace Swift.Extensibility.Plugins
 {
     [InheritedExport]
-    public interface IPlugin : IInitializationAware
+    public interface IPlugin : IInitializationAware, IShutdownAware, ISwiftExtender
     {
     }
 }

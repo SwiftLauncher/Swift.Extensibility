@@ -23,6 +23,11 @@ namespace Swift.Extensibility.Services
 
     public class InitializationEventArgs : EventArgs
     {
+        public IExtensionRegistry ExtensionRegistry { get; }
 
+        public InitializationEventArgs(IExtensionRegistry extensionRegistry)
+        {
+            ExtensionRegistry = extensionRegistry;
+        }
     }
 }

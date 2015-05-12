@@ -1,7 +1,5 @@
 ﻿using System;
 using System.ComponentModel.Composition;
-using System.Windows;
-using System.Windows.Media.Imaging;
 
 namespace Swift.Extensibility.Services.Profile
 {
@@ -23,7 +21,7 @@ namespace Swift.Extensibility.Services.Profile
         /// <summary>
         /// [optional] An icon that represents this Service.
         /// </summary>
-        BitmapImage Icon { get; }
+        Uri Icon { get; }
         /// <summary>
         /// A short description of this Login-Service.
         /// </summary>
@@ -31,7 +29,7 @@ namespace Swift.Extensibility.Services.Profile
         /// <summary>
         /// The custom Login-UI.
         /// </summary>
-        FrameworkElement LoginView { get; }
+        object LoginView { get; }
         /// <summary>
         /// Status of Login after login attempt.
         /// </summary>

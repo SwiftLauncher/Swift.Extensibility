@@ -5,7 +5,6 @@ namespace Swift.Extensibility.Services.Logging
     /// <summary>
     /// Interface for Loggers.
     /// </summary>
-    [InheritedExport]
     public interface ILogger
     {
         /// <summary>

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using System.Windows;
+﻿using System.Collections.Generic;
 using Swift.Extensibility.Services;
 using Swift.Extensibility.Services.Settings;
-using Swift.Extensibility.UI;
 
 namespace Swift.Extensibility
 {

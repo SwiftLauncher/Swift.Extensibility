@@ -32,6 +32,7 @@ namespace Swift.Extensibility.UI
         /// </summary>
         /// <param name="text">The text.</param>
         /// <param name="onClickCallback">The on click callback.</param>
+        /// <param name="targetMenu">The target Menu.</param>
         /// <param name="iconSource">The icon.</param>
         public MenuItem(string text, Action onClickCallback, MenuTarget targetMenu, Uri iconSource = null)
         {
@@ -40,10 +41,5 @@ namespace Swift.Extensibility.UI
             TargetMenu = targetMenu;
             IconSource = iconSource;
         }
-    }
-
-    public enum MenuTarget
-    {
-        TopBar
     }
 }

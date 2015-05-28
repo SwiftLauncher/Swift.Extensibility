@@ -5,13 +5,13 @@ namespace Swift.Extensibility.UI
     /// <summary>
     /// Interface for the UI Service component of Swift.
     /// </summary>
-    public interface IUIService
+    public interface IUiService
     {
         /// <summary>
         /// Adds the resource dictionary loaded from the given Uri to the app-wide resources.
         /// </summary>
         /// <param name="resourceDictionaryUri">The resource.</param>
-        void AddUIResource(Uri resourceDictionaryUri);
+        void AddUiResource(Uri resourceDictionaryUri);
 
         /// <summary>
         /// Registers the menu item.
@@ -21,42 +21,24 @@ namespace Swift.Extensibility.UI
         RegisterMenuItemResult RegisterMenuItem(MenuItem item);
 
         /// <summary>
-        /// Navigates the specified view to the given viewmodel.
+        /// Navigates the specified viewmodel to the given target.
         /// </summary>
         /// <param name="viewModel">The view model.</param>
         /// <param name="target">The target.</param>
-        void Navigate(IViewModel viewModel, string target);
+        void Navigate(object viewModel, string target);
 
         /// <summary>
         /// Executes the given <see cref="Action"/> on the UI-Thread.
         /// </summary>
         /// <param name="callback">The <see cref="Action"/> to be executed on the UI-Thread.</param>
-        void UIDispatch(Action callback);
+        void UiDispatch(Action callback);
 
         /// <summary>
-        /// Executes the given <see cref="Func" /> on the UI-Thread.
+        /// Executes the given <see cref="Func{TResult}" /> on the UI-Thread.
         /// </summary>
         /// <typeparam name="T">The return type of the function to be dispatched.</typeparam>
-        /// <param name="callback">The <see cref="Func" /> to be executed on the UI-Thread.</param>
+        /// <param name="callback">The <see cref="Func{TResult}" /> to be executed on the UI-Thread.</param>
         /// <returns></returns>
-        T UIDispatch<T>(Func<T> callback);
-    }
-
-    public enum RegisterMenuItemResult
-    {
-        Successful,
-        AlreadyExisting,
-        Failed
-    }
-
-    /// <summary>
-    /// Contains constants for navigation targets.
-    /// </summary>
-    public static class NavigationTargets
-    {
-        /// <summary>
-        /// The center view
-        /// </summary>
-        public const string CenterView = "Shell.CenterView";
+        T UiDispatch<T>(Func<T> callback);
     }
 }

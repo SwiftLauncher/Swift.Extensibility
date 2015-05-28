@@ -23,7 +23,7 @@ namespace Swift.Extensibility.Services.Settings
                 if (value != _value && value >= MinValue && value <= MaxValue)
                 {
                     Set(ref _value, value);
-                    if (ChangeCallback != null) ChangeCallback(value);
+                    ChangeCallback?.Invoke(value);
                 }
             }
         }
@@ -31,7 +31,7 @@ namespace Swift.Extensibility.Services.Settings
         /// <summary>
         /// Gets or sets the default value.
         /// </summary>
-        public int DefaultValue { get; private set; }
+        public int DefaultValue { get; }
 
         /// <summary>
         /// Gets the minimum value.
@@ -39,7 +39,7 @@ namespace Swift.Extensibility.Services.Settings
         /// <value>
         /// The minimum value.
         /// </value>
-        public int MinValue { get; private set; }
+        public int MinValue { get; }
 
         /// <summary>
         /// Gets the maximum value.
@@ -47,7 +47,7 @@ namespace Swift.Extensibility.Services.Settings
         /// <value>
         /// The maximum value.
         /// </value>
-        public int MaxValue { get; private set; }
+        public int MaxValue { get; }
 
         /// <summary>
         /// Gets the change callback.
@@ -55,22 +55,22 @@ namespace Swift.Extensibility.Services.Settings
         /// <value>
         /// The change callback.
         /// </value>
-        public Action<int> ChangeCallback { get; private set; }
+        public Action<int> ChangeCallback { get; }
 
         /// <summary>
         /// Gets or sets the display name.
         /// </summary>
-        public string DisplayName { get; private set; }
+        public string DisplayName { get; }
 
         /// <summary>
         /// Gets or sets the tool tip. Can be null to hide tooltips.
         /// </summary>
-        public string ToolTip { get; private set; }
+        public string ToolTip { get; }
 
         /// <summary>
         /// Gets or sets the description. Can be null to hide the description.
         /// </summary>
-        public string Description { get; private set; }
+        public string Description { get; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="IntegerSetting"/> class.

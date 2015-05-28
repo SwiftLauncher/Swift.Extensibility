@@ -6,7 +6,7 @@ namespace Swift.Extensibility.UI
     /// <summary>
     /// Base class for viewmodels in Swift.
     /// </summary>
-    public class ViewModelBase : IViewModel, INotifyPropertyChanged
+    public class ViewModelBase : INotifyPropertyChanged
     {
         /// <summary>
         /// Occurs when a property value changes.
@@ -19,9 +19,7 @@ namespace Swift.Extensibility.UI
         /// <param name="propertyName">Name of the property that changed.</param>
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
-            var p = PropertyChanged;
-            if (p != null)
-                p(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         /// <summary>
@@ -33,7 +31,7 @@ namespace Swift.Extensibility.UI
         /// <param name="propertyName">Name of the property that changed.</param>
         protected void Set<T>(ref T field, T value, [CallerMemberName]string propertyName = "")
         {
-            if (!object.Equals(field, value))
+            if (!Equals(field, value))
             {
                 field = value;
                 OnPropertyChanged(propertyName);

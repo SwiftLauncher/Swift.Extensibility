@@ -81,9 +81,13 @@
     <Compile Include="Services\Settings\Setting.cs" />
     <Compile Include="Services\Storage\IStorageManager.cs" />
     <Compile Include="UI\FocusTargets.cs" />
-    <Compile Include="UI\IUIService.cs" />
-    <Compile Include="UI\IViewModel.cs" />
+    <Compile Include="UI\IUiService.cs" />
+    <Compile Include="UI\INavigationTargetContainer.cs" />
     <Compile Include="UI\MenuItem.cs" />
+    <Compile Include="UI\MenuTarget.cs" />
+    <Compile Include="UI\NavigationTargetAttribute.cs" />
+    <Compile Include="UI\NavigationTargets.cs" />
+    <Compile Include="UI\RegisterMenuItemResult.cs" />
     <Compile Include="UI\ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup />

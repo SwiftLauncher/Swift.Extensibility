@@ -3,10 +3,10 @@
 namespace Swift.Extensibility.UI
 {
     /// <summary>
-    /// Interface for Swift viewmodels.
+    /// Interface for Swift viewmodels that use the NavigationTargetAttribute.
     /// </summary>
     [InheritedExport]
-    public interface IViewModel
+    public interface INavigationTargetContainer
     {
     }
 }

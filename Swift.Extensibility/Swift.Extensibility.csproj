@@ -52,7 +52,10 @@
     <Compile Include="Input\IInput.cs" />
     <Compile Include="Input\IInputParser.cs" />
     <Compile Include="Input\IInputTextCompletionProvider.cs" />
+    <Compile Include="Input\Functions\ISwiftFunctionSource.cs" />
     <Compile Include="Input\KnownHotkeys.cs" />
+    <Compile Include="Input\Functions\ParameterDescriptionAttribute.cs" />
+    <Compile Include="Input\Functions\SwiftFunctionAttribute.cs" />
     <Compile Include="ISwiftExtender.cs" />
     <Compile Include="Plugins\PluginBase.cs" />
     <Compile Include="Plugins\IPlugin.cs" />

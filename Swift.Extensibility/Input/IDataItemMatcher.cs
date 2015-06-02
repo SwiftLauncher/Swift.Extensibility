@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.Composition;
-
-namespace Swift.Extensibility.Input
+﻿namespace Swift.Extensibility.Input
 {
     /// <summary>
     /// Interface for DataItem matchers.
@@ -19,14 +17,16 @@ namespace Swift.Extensibility.Input
         /// Gets the match certainty value for the given DataItem.
         /// </summary>
         /// <param name="item">The item.</param>
-        /// <returns></returns>
-        int GetCertainty(DataItem item, IInput input);
+        /// <param name="input">The input.</param>
+        /// <returns>A value representing the certainty for the given item and input.</returns>
+        int GetCertainty(DataItem item, string input);
 
         /// <summary>
         /// Determines whether the specified item is a match for the given input.
         /// </summary>
         /// <param name="item">The item.</param>
-        /// <returns></returns>
-        bool IsMatch(DataItem item, IInput input);
+        /// <param name="input">The input.</param>
+        /// <returns>True, if the certainty for the given item is greater than <see cref="ThresholdCertainty"/>.</returns>
+        bool IsMatch(DataItem item, string input);
     }
 }

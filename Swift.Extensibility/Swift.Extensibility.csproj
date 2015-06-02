@@ -45,6 +45,7 @@
     <Compile Include="Events\IEventBroker.cs" />
     <Compile Include="Events\IEventChannel.cs" />
     <Compile Include="Input\DataItem.cs" />
+    <Compile Include="Input\Functions\ISwiftFunctionCallContext.cs" />
     <Compile Include="Input\IDataItemHandler.cs" />
     <Compile Include="Input\IDataItemMatcher.cs" />
     <Compile Include="Input\IDataItemRater.cs" />
@@ -84,10 +85,12 @@
     <Compile Include="Services\Settings\Setting.cs" />
     <Compile Include="Services\Storage\IStorageManager.cs" />
     <Compile Include="UI\FocusTargets.cs" />
+    <Compile Include="UI\INavigationAwareTargetContainer.cs" />
     <Compile Include="UI\IUiService.cs" />
     <Compile Include="UI\INavigationTargetContainer.cs" />
     <Compile Include="UI\MenuItem.cs" />
     <Compile Include="UI\MenuTarget.cs" />
+    <Compile Include="UI\NavigationHandlerResult.cs" />
     <Compile Include="UI\NavigationTargetAttribute.cs" />
     <Compile Include="UI\NavigationTargets.cs" />
     <Compile Include="UI\RegisterMenuItemResult.cs" />

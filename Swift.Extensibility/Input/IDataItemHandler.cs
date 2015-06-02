@@ -31,13 +31,13 @@ namespace Swift.Extensibility.Input
         /// <param name="input">The input.</param>
         /// <param name="items">The items.</param>
         /// <param name="cancellationToken">The cancellation token. Abort any operation if this cancellation is requested.</param>
-        Task GetMatchingItemsAsync(IInput input, ref IList<DataItem> items, CancellationToken cancellationToken);
+        Task GetMatchingItemsAsync(string input, ref IList<DataItem> items, CancellationToken cancellationToken);
 
         /// <summary>
         /// Gets the best match asynchronously.
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns>The best matching DataItem for the given input.</returns>
-        Task<DataItem> GetBestMatchAsync(IInput input);
+        Task<DataItem> GetBestMatchAsync(string input);
     }
 }

@@ -13,6 +13,6 @@ namespace Swift.Extensibility.Input
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns>The matching items for the given input.</returns>
-        IEnumerable<DataItem> GetMatchingItems(IInput input);
+        IEnumerable<DataItem> GetMatchingItems(string input);
     }
 }

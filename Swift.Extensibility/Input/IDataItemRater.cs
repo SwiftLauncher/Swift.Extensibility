@@ -13,6 +13,6 @@ namespace Swift.Extensibility.Input
         /// <param name="item">The item.</param>
         /// <param name="input">The input.</param>
         /// <returns>A value indicating the rank of the DataItem regarding the given input.</returns>
-        int Rate(DataItem item, IInput input);
+        int Rate(DataItem item, string input);
     }
 }

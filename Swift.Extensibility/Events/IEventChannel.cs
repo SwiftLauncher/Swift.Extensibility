@@ -38,7 +38,7 @@ namespace Swift.Extensibility.Events
     /// Interface for read-only EventChannels with parametrized handlers.
     /// </summary>
     /// <typeparam name="T">The type of the argument.</typeparam>
-    public interface IReadOnlyEventChannel<T>
+    public interface IReadOnlyEventChannel<out T>
     {
         /// <summary>
         /// Gets the name of this channel.

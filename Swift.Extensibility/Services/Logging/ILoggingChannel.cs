@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
 namespace Swift.Extensibility.Services.Logging
@@ -15,7 +14,7 @@ namespace Swift.Extensibility.Services.Logging
         /// <value>
         /// The identifier.
         /// </value>
-        string ID { get; }
+        string Id { get; }
 
         /// <summary>
         /// Gets the messages.
@@ -23,7 +22,7 @@ namespace Swift.Extensibility.Services.Logging
         /// <value>
         /// The messages.
         /// </value>
-        IEnumerable<ILogMessage> Messages { get; }
+        IEnumerable<LogMessage> Messages { get; }
 
         /// <summary>
         /// Logs the specified message.
@@ -46,37 +45,4 @@ namespace Swift.Extensibility.Services.Logging
     /// </summary>
     /// <param name="args">The <see cref="MessageAddedEventArgs"/> instance containing the event data.</param>
     public delegate void MessageAddedEventHandler(MessageAddedEventArgs args);
-
-    /// <summary>
-    /// EventArgs for MessageAdded events.
-    /// </summary>
-    public class MessageAddedEventArgs : EventArgs
-    {
-        /// <summary>
-        /// Gets the message.
-        /// </summary>
-        /// <value>
-        /// The message.
-        /// </value>
-        public ILogMessage Message { get; private set; }
-
-        /// <summary>
-        /// Gets the channel identifier.
-        /// </summary>
-        /// <value>
-        /// The channel identifier.
-        /// </value>
-        public string ChannelID { get; private set; }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MessageAddedEventArgs"/> class.
-        /// </summary>
-        /// <param name="message">The message.</param>
-        /// <param name="channelID">The channel identifier.</param>
-        public MessageAddedEventArgs(ILogMessage message, string channelID)
-        {
-            Message = message;
-            ChannelID = channelID;
-        }
-    }
 }

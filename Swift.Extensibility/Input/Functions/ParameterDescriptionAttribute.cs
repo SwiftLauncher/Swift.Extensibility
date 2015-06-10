@@ -10,7 +10,6 @@ namespace Swift.Extensibility.Input.Functions
     {
         /// <summary>
         /// The name of the parameter the is described by this attribute.
-        /// It is recommended that you use the C# 6 "nameof()" feature for this.
         /// </summary>
         public string ParameterName { get; }
 
@@ -27,7 +26,7 @@ namespace Swift.Extensibility.Input.Functions
         /// <summary>
         /// Creates a new instance of the <see cref="ParameterDescriptionAttribute"/> class.
         /// </summary>
-        /// <param name="parameterName">The name of the parameter that is described by this attribute. (Use nameof() if possible)</param>
+        /// <param name="parameterName">The name of the parameter that is described by this attribute.</param>
         /// <param name="description">The description for the parameter.</param>
         public ParameterDescriptionAttribute(string parameterName, string description)
         {

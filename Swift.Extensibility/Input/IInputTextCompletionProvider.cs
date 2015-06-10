@@ -10,8 +10,8 @@ namespace Swift.Extensibility.Input
         /// <summary>
         /// Returns an enumeration of completion strings for the given input.
         /// </summary>
-        /// <param name="input">The current input.</param>
+        /// <param name="input">The current <see cref="Input"/>.</param>
         /// <returns>An enumeration of completions.</returns>
-        IEnumerable<string> GetCompletion(IInput input);
+        IEnumerable<string> GetCompletion(Input input);
     }
 }

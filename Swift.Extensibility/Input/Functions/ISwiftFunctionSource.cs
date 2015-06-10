@@ -6,7 +6,5 @@ namespace Swift.Extensibility.Input.Functions
     /// Interface for classes that want to export Swift Functions.
     /// </summary>
     [InheritedExport]
-    public interface ISwiftFunctionSource
-    {
-    }
+    public interface ISwiftFunctionSource { }
 }

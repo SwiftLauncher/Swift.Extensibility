@@ -3,45 +3,10 @@ using Swift.Toolkit;
 
 namespace Swift.Extensibility.Services.Settings
 {
-    public interface ISetting
-    {
-        /// <summary>
-        /// Gets or sets the display name.
-        /// </summary>
-        string DisplayName { get; }
-
-        /// <summary>
-        /// Gets or sets the tool tip. Can be null to hide tooltips.
-        /// </summary>
-        string ToolTip { get; }
-
-        /// <summary>
-        /// Gets or sets the description. Can be null to hide the description.
-        /// </summary>
-        string Description { get; }
-    }
-
-    public interface ISetting<T> : ISetting
-    {
-        /// <summary>
-        /// Gets or sets the value.
-        /// </summary>
-        T Value { get; set; }
-
-        /// <summary>
-        /// Gets or sets the default value.
-        /// </summary>
-        T DefaultValue { get; }
-
-        /// <summary>
-        /// Gets the change callback.
-        /// </summary>
-        /// <value>
-        /// The change callback.
-        /// </value>
-        Action<T> ChangeCallback { get; }
-    }
-
+    /// <summary>
+    /// Base class for settings of specific types.
+    /// </summary>
+    /// <typeparam name="T">The setting type.</typeparam>
     public abstract class Setting<T> : BindableBase, ISetting<T>
     {
         /// <summary>
@@ -71,10 +36,10 @@ namespace Swift.Extensibility.Services.Settings
             }
             set
             {
-                if (!Object.Equals(_value, value))
+                if (!Equals(_value, value))
                 {
                     Set(ref _value, value);
-                    if (ChangeCallback != null) ChangeCallback(value);
+                    ChangeCallback?.Invoke(value);
                 }
             }
         }
@@ -90,7 +55,6 @@ namespace Swift.Extensibility.Services.Settings
         /// <value>
         /// The change callback.
         /// </value>
-        /// <exception cref="NotImplementedException"></exception>
         public Action<T> ChangeCallback { get; protected set; }
     }
 }

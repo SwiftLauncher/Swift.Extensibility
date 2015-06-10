@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.ComponentModel.Composition;
 using Swift.Extensibility.Services;
 using Swift.Extensibility.Services.Logging;
 
@@ -7,44 +7,60 @@ namespace Swift.Extensibility.Plugins
     /// <summary>
     /// Base class for swift plugins implementing the <see cref="IPlugin"/> interface;
     /// </summary>
-    public abstract class PluginBase : IPlugin, IPluginServiceUser, ILogSource
+    public abstract class PluginBase : IPlugin
     {
-        #region Initialization and Shutdown
-
+        /// <summary>
+        /// Gets the initialization priority. Higher values lead to later initialization.
+        /// </summary>
+        /// <value>
+        /// The initialization priority.
+        /// </value>
         public int InitializationPriority { get; } = 0;
 
+        /// <summary>
+        /// Gets the shutdown priority.
+        /// </summary>
+        /// <value>
+        /// The shutdown priority.
+        /// </value>
         public int ShutdownPriority { get; } = 0;
 
+        /// <summary>
+        /// Raises the <see cref="E:Initialization" /> event.
+        /// </summary>
+        /// <param name="args">The <see cref="InitializationEventArgs" /> instance containing the event data.</param>
         public virtual void OnInitialization(InitializationEventArgs args) { }
 
+        /// <summary>
+        /// Raises the <see cref="E:Shutdown" /> event.
+        /// </summary>
+        /// <param name="args">The <see cref="ShutdownEventArgs" /> instance containing the event data.</param>
         public virtual void OnShutdown(ShutdownEventArgs args) { }
 
-        #endregion
+        /// <summary>
+        /// Gets the plugin services.
+        /// </summary>
+        /// <value>
+        /// The plugin services.
+        /// </value>
+        [Import]
+        protected IPluginServices PluginServices { get; }
 
-        #region Properties
+        /// <summary>
+        /// Sets the logger.
+        /// </summary>
+        /// <value>
+        /// The logger.
+        /// </value>
+        [Import]
+        private ILogger Logger { set { Log = value.GetChannel(GetType().FullName); } }
 
-        protected IPluginServices PluginServices { get; private set; }
-
+        /// <summary>
+        /// Gets the log.
+        /// </summary>
+        /// <value>
+        /// The log.
+        /// </value>
         protected ILoggingChannel Log { get; private set; }
-
-        #endregion
-
-        #region IPluginServiceUser Implementation
-
-        public void SetPluginServices(IPluginServices pluginServices)
-        {
-            PluginServices = PluginServices ?? pluginServices;
-        }
-
-        #endregion
-
-        #region ILogSource Implementation
-
-        public void SetLoggingChannel(ILoggingChannel channel)
-        {
-            Log = Log ?? channel;
-        }
-
-        #endregion
     }
 }

@@ -6,6 +6,7 @@ namespace Swift.Extensibility.Services.Settings
     /// <summary>
     /// Interface for classes that have settings.
     /// </summary>
+    [InheritedExport]
     public interface ISettingsSource
     {
         /// <summary>

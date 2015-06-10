@@ -7,29 +7,29 @@ namespace Swift.Extensibility.Plugins
     /// Represents an attribute for exporting Swift plugins.
     /// </summary>
     [MetadataAttribute]
-    [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
+    [AttributeUsage(AttributeTargets.Class, Inherited = false)]
     public sealed class PluginMetadataAttribute : Attribute, IPluginMetadata
     {
         /// <summary>
         /// Gets the name.
         /// </summary>
-        public string Name { get; private set; }
+        public string Name { get; }
         /// <summary>
         /// Gets the version.
         /// </summary>
-        public string Version { get; private set; }
+        public string Version { get; }
         /// <summary>
         /// Gets the description.
         /// </summary>
-        public string Description { get; private set; }
+        public string Description { get; }
         /// <summary>
         /// Gets the help URI.
         /// </summary>
-        public string HelpUri { get; private set; }
+        public string HelpUri { get; }
         /// <summary>
         /// Gets the identifier.
         /// </summary>
-        public string ID { get; private set; }
+        public string ID { get; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PluginMetadataAttribute" /> class.

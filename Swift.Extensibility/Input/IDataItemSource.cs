@@ -6,6 +6,7 @@ namespace Swift.Extensibility.Input
     /// <summary>
     /// Interface for sources of DataItems.
     /// </summary>
+    [InheritedExport]
     public interface IDataItemSource
     {
         /// <summary>

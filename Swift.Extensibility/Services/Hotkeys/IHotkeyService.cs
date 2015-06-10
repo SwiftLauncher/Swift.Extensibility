@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace Swift.Extensibility.Input
+namespace Swift.Extensibility.Services.Hotkeys
 {
     /// <summary>
     /// Allows registering application- and system-wide hotkeys.
@@ -48,57 +48,4 @@ namespace Swift.Extensibility.Input
     /// </summary>
     /// <param name="args">The <see cref="HotkeyEventArgs"/> instance containing the event data.</param>
     public delegate void HotkeyEventHandler(HotkeyEventArgs args);
-
-    /// <summary>
-    /// Contains HotkeyModes.
-    /// </summary>
-    public enum HotkeyMode
-    {
-        /// <summary>
-        /// The resulting hotkey will be registered system-wide.
-        /// </summary>
-        System,
-        /// <summary>
-        /// The resulting hotkey will be registered application-wide.
-        /// </summary>
-        Application
-    }
-
-    /// <summary>
-    /// Contains HotkeyVisibilities.
-    /// </summary>
-    public enum HotkeyVisibility
-    {
-        /// <summary>
-        /// If marked as public, a hotkey will raise the public OnHotkey event when it is pressed in addition to the callback delegate.
-        /// </summary>
-        Public,
-        /// <summary>
-        /// If marked as private, a hotkey will not raise the public OnHotkey event, but only call the callback delegate.
-        /// </summary>
-        Private
-    }
-
-    /// <summary>
-    /// EventArgs for hotkey events.
-    /// </summary>
-    public sealed class HotkeyEventArgs : EventArgs
-    {
-        /// <summary>
-        /// Gets the name of the hotkey that was pressed.
-        /// </summary>
-        /// <value>
-        /// The name.
-        /// </value>
-        public string Name { get; private set; }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="HotkeyEventArgs"/> class.
-        /// </summary>
-        /// <param name="name">The name.</param>
-        public HotkeyEventArgs(string name)
-        {
-            Name = name;
-        }
-    }
 }

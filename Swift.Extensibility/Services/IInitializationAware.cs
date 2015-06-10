@@ -3,6 +3,9 @@ using System.ComponentModel.Composition;
 
 namespace Swift.Extensibility.Services
 {
+    /// <summary>
+    /// Interface for initialization-aware components.
+    /// </summary>
     [InheritedExport]
     public interface IInitializationAware
     {
@@ -21,13 +24,8 @@ namespace Swift.Extensibility.Services
         void OnInitialization(InitializationEventArgs args);
     }
 
-    public class InitializationEventArgs : EventArgs
-    {
-        public IExtensionRegistry ExtensionRegistry { get; }
-
-        public InitializationEventArgs(IExtensionRegistry extensionRegistry)
-        {
-            ExtensionRegistry = extensionRegistry;
-        }
-    }
+    /// <summary>
+    /// The initialization event args.
+    /// </summary>
+    public class InitializationEventArgs : EventArgs { }
 }

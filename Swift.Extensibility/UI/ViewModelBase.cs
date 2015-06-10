@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
 namespace Swift.Extensibility.UI
@@ -29,13 +30,14 @@ namespace Swift.Extensibility.UI
         /// <param name="field">The field.</param>
         /// <param name="value">The value.</param>
         /// <param name="propertyName">Name of the property that changed.</param>
-        protected void Set<T>(ref T field, T value, [CallerMemberName]string propertyName = "")
+        /// <returns>True, if the field was set. False otherwise.</returns>
+        [SuppressMessage("ReSharper", "ExplicitCallerInfoArgument")]
+        protected bool Set<T>(ref T field, T value, [CallerMemberName]string propertyName = "")
         {
-            if (!Equals(field, value))
-            {
-                field = value;
-                OnPropertyChanged(propertyName);
-            }
+            if (Equals(field, value)) return false;
+            field = value;
+            OnPropertyChanged(propertyName);
+            return true;
         }
     }
 }

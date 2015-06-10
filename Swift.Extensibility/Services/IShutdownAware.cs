@@ -3,6 +3,9 @@ using System.ComponentModel.Composition;
 
 namespace Swift.Extensibility.Services
 {
+    /// <summary>
+    /// Interface for shutdown-aware components.
+    /// </summary>
     [InheritedExport]
     public interface IShutdownAware
     {
@@ -21,6 +24,9 @@ namespace Swift.Extensibility.Services
         void OnShutdown(ShutdownEventArgs args);
     }
 
+    /// <summary>
+    /// Represents the shutdown event args.
+    /// </summary>
     public class ShutdownEventArgs : EventArgs
     {
 

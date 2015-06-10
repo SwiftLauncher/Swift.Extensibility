@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace Swift.Extensibility.Services.Settings
 {
+    /// <summary>
+    /// Interface for SettingsStores.
+    /// </summary>
     public interface ISettingsStore
     {
         /// <summary>
@@ -56,6 +59,11 @@ namespace Swift.Extensibility.Services.Settings
         event SettingsStoreEntryChangedEventHandler EntryChanged;
     }
 
+    /// <summary>
+    /// Event handler for the SettingsStoreEntryChanged event.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="args">The <see cref="SettingsStoreEntryChangedEventArgs"/> instance containing the event data.</param>
     public delegate void SettingsStoreEntryChangedEventHandler(object sender, SettingsStoreEntryChangedEventArgs args);
 
     /// <summary>
@@ -69,7 +77,7 @@ namespace Swift.Extensibility.Services.Settings
         /// <value>
         /// The key.
         /// </value>
-        public string Key { get; private set; }
+        public string Key { get; }
 
         /// <summary>
         /// Gets the old value.
@@ -77,7 +85,7 @@ namespace Swift.Extensibility.Services.Settings
         /// <value>
         /// The old value.
         /// </value>
-        public object OldValue { get; private set; }
+        public object OldValue { get; }
 
         /// <summary>
         /// Gets the new value.
@@ -85,7 +93,7 @@ namespace Swift.Extensibility.Services.Settings
         /// <value>
         /// The new value.
         /// </value>
-        public object NewValue { get; private set; }
+        public object NewValue { get; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SettingsStoreEntryChangedEventArgs"/> class.

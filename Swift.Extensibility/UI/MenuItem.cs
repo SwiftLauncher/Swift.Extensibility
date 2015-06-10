@@ -1,4 +1,5 @@
 ﻿using System;
+using Swift.Extensibility.Input.Functions;
 
 namespace Swift.Extensibility.UI
 {
@@ -10,34 +11,34 @@ namespace Swift.Extensibility.UI
         /// <summary>
         /// Gets the text.
         /// </summary>
-        public string Text { get; private set; }
+        public string Text { get; }
 
         /// <summary>
         /// Gets the on click callback.
         /// </summary>
-        public Action OnClickCallback { get; private set; }
+        public FunctionInfo OnClickFunction { get; }
 
         /// <summary>
         /// Gets the icon.
         /// </summary>
-        public Uri IconSource { get; private set; }
+        public Uri IconSource { get; }
 
         /// <summary>
         /// Gets the target menu.
         /// </summary>
-        public MenuTarget TargetMenu { get; private set; }
+        public MenuTarget TargetMenu { get; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MenuItem"/> class.
         /// </summary>
         /// <param name="text">The text.</param>
-        /// <param name="onClickCallback">The on click callback.</param>
+        /// <param name="onClickFunction">The on click callback.</param>
         /// <param name="targetMenu">The target Menu.</param>
         /// <param name="iconSource">The icon.</param>
-        public MenuItem(string text, Action onClickCallback, MenuTarget targetMenu, Uri iconSource = null)
+        public MenuItem(string text, FunctionInfo onClickFunction, MenuTarget targetMenu, Uri iconSource = null)
         {
             Text = text;
-            OnClickCallback = onClickCallback;
+            OnClickFunction = onClickFunction;
             TargetMenu = targetMenu;
             IconSource = iconSource;
         }

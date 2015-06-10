@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
-using Swift.Extensibility.Services;
+using Swift.Extensibility.Plugins;
+using Swift.Extensibility.Services.Profile;
 using Swift.Extensibility.Services.Settings;
 
-namespace Swift.Extensibility
+namespace Swift.Extensibility.Services
 {
     /// <summary>
     /// Interface for the plugin service component of Swift.
@@ -23,7 +24,6 @@ namespace Swift.Extensibility
         /// Gets all services of the requested type.
         /// </summary>
         /// <typeparam name="TService">The type of the service.</typeparam>
-        /// <param name="cardinality">The cardinality.</param>
         /// <returns>A list of all services of the requested type.</returns>
         /// <remarks>Only types that have been configured as valid services can be requested using this function.</remarks>
         IEnumerable<TService> GetServices<TService>();
@@ -32,9 +32,18 @@ namespace Swift.Extensibility
 
         #region Settings and User
 
-        ISettingsStore GetSettingsStore<TPlugin>();
+        /// <summary>
+        /// Retrieves the settingsstore for the given plugin type.
+        /// </summary>
+        /// <typeparam name="TPlugin">The type of the plugin that requests the settings store.</typeparam>
+        /// <returns>The <see cref="ISettingsStore"/>.</returns>
+        ISettingsStore GetSettingsStore<TPlugin>() where TPlugin : IPlugin;
 
-        IUserProfile GetCurrentUser();
+        /// <summary>
+        /// Retrieves the current user profile.
+        /// </summary>
+        /// <returns>The current user profile.</returns>
+        UserProfile GetCurrentUser();
 
         #endregion
     }

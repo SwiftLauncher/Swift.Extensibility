@@ -8,17 +8,17 @@
         /// <summary>
         /// Gets or sets the display name.
         /// </summary>
-        public string DisplayName { get; private set; }
+        public string DisplayName { get; }
 
         /// <summary>
         /// Gets or sets the tool tip. Can be null to hide tooltips.
         /// </summary>
-        public string ToolTip { get; private set; }
+        public string ToolTip { get; }
 
         /// <summary>
         /// Gets or sets the description. Can be null to hide the description.
         /// </summary>
-        public string Description { get; private set; }
+        public string Description { get; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Header"/> class.

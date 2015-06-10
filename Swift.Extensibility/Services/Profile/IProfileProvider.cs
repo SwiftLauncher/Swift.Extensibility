@@ -35,9 +35,9 @@ namespace Swift.Extensibility.Services.Profile
         /// </summary>
         bool IsLoggedIn { get; }
         /// <summary>
-        /// The <see cref="IUserProfile"/> to be returned after successful Login. Required by Swift for further user identification and encryption.
+        /// The <see cref="UserProfile"/> to be returned after successful Login. Required by Swift for further user identification and encryption.
         /// </summary>
-        IUserProfile UserProfile { get; }
+        UserProfile UserProfile { get; }
 
         /// <summary>
         /// This will be called when the provider has been chosen and login should be performed. Use this only for preparation and automatic login. This will not run on the GUI Thread.

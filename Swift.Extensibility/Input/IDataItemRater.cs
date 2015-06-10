@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.Composition;
-
-namespace Swift.Extensibility.Input
+﻿namespace Swift.Extensibility.Input
 {
     /// <summary>
     /// Interface for DataItem rating services.

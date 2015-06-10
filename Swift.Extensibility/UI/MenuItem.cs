@@ -1,4 +1,5 @@
 ﻿using System;
+using Swift.Extensibility.Input.Functions;
 
 namespace Swift.Extensibility.UI
 {
@@ -15,7 +16,7 @@ namespace Swift.Extensibility.UI
         /// <summary>
         /// Gets the associated function name.
         /// </summary>
-        public string FunctionName { get; }
+        public string Function { get; }
 
         /// <summary>
         /// Gets the function input.
@@ -39,14 +40,31 @@ namespace Swift.Extensibility.UI
         /// Initializes a new instance of the <see cref="MenuItem" /> class.
         /// </summary>
         /// <param name="text">The text.</param>
-        /// <param name="functionName">The name of the associated function.</param>
+        /// <param name="function">The name of the associated function.</param>
         /// <param name="targetMenu">The target Menu.</param>
         /// <param name="iconSource">The icon.</param>
         /// <param name="functionInput">The function input.</param>
-        public MenuItem(string text, string functionName, MenuTarget targetMenu, Uri iconSource = null, Input.Input functionInput = null)
+        public MenuItem(string text, string function, MenuTarget targetMenu, Uri iconSource = null, Input.Input functionInput = null)
         {
             Text = text;
-            FunctionName = functionName;
+            Function = function;
+            TargetMenu = targetMenu;
+            IconSource = iconSource;
+            FunctionInput = functionInput;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MenuItem"/> class.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="function">The function.</param>
+        /// <param name="targetMenu">The target menu.</param>
+        /// <param name="iconSource">The icon source.</param>
+        /// <param name="functionInput">The function input.</param>
+        public MenuItem(string text, FunctionInfo function, MenuTarget targetMenu, Uri iconSource = null, Input.Input functionInput = null)
+        {
+            Text = text;
+            Function = function.FullName;
             TargetMenu = targetMenu;
             IconSource = iconSource;
             FunctionInput = functionInput;

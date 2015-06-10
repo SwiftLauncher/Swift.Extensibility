@@ -1,5 +1,4 @@
 ﻿using System;
-using Swift.Extensibility.Input.Functions;
 
 namespace Swift.Extensibility.UI
 {
@@ -14,9 +13,17 @@ namespace Swift.Extensibility.UI
         public string Text { get; }
 
         /// <summary>
-        /// Gets the on click callback.
+        /// Gets the associated function name.
         /// </summary>
-        public FunctionInfo OnClickFunction { get; }
+        public string FunctionName { get; }
+
+        /// <summary>
+        /// Gets the function input.
+        /// </summary>
+        /// <value>
+        /// The function input.
+        /// </value>
+        public Input.Input FunctionInput { get; }
 
         /// <summary>
         /// Gets the icon.
@@ -29,18 +36,20 @@ namespace Swift.Extensibility.UI
         public MenuTarget TargetMenu { get; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MenuItem"/> class.
+        /// Initializes a new instance of the <see cref="MenuItem" /> class.
         /// </summary>
         /// <param name="text">The text.</param>
-        /// <param name="onClickFunction">The on click callback.</param>
+        /// <param name="functionName">The name of the associated function.</param>
         /// <param name="targetMenu">The target Menu.</param>
         /// <param name="iconSource">The icon.</param>
-        public MenuItem(string text, FunctionInfo onClickFunction, MenuTarget targetMenu, Uri iconSource = null)
+        /// <param name="functionInput">The function input.</param>
+        public MenuItem(string text, string functionName, MenuTarget targetMenu, Uri iconSource = null, Input.Input functionInput = null)
         {
             Text = text;
-            OnClickFunction = onClickFunction;
+            FunctionName = functionName;
             TargetMenu = targetMenu;
             IconSource = iconSource;
+            FunctionInput = functionInput;
         }
     }
 }

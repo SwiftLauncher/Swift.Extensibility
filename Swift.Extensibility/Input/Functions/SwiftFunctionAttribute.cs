@@ -37,10 +37,14 @@ namespace Swift.Extensibility.Input.Functions
         /// <summary>
         /// The function will be executed when execution is explicitly requested.
         /// </summary>
-        Explicit,
+        Explicit = 0,
         /// <summary>
         /// The function will be executed whenever the input changes.
         /// </summary>
-        Continuous
+        Continuous = 1,
+        /// <summary>
+        /// The function will be evaluated continuously and called, when the execution is explicitly requested.
+        /// </summary>
+        Both = 2
     }
 }

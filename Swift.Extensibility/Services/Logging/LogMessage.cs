@@ -5,12 +5,53 @@
     /// </summary>
     public sealed class LogMessage
     {
-        string ChannelId { get; }
-        string Message { get; }
-        LogMessageSeverity Severity { get; }
-        string Sender { get; }
-        string SourceFile { get; }
-        int SourceLine { get; }
+        /// <summary>
+        /// Gets the channel identifier.
+        /// </summary>
+        /// <value>
+        /// The channel identifier.
+        /// </value>
+        public string ChannelId { get; }
+
+        /// <summary>
+        /// Gets the message.
+        /// </summary>
+        /// <value>
+        /// The message.
+        /// </value>
+        public string Message { get; }
+
+        /// <summary>
+        /// Gets the severity.
+        /// </summary>
+        /// <value>
+        /// The severity.
+        /// </value>
+        public LogMessageSeverity Severity { get; }
+
+        /// <summary>
+        /// Gets the sender.
+        /// </summary>
+        /// <value>
+        /// The sender.
+        /// </value>
+        public string Sender { get; }
+
+        /// <summary>
+        /// Gets the source file.
+        /// </summary>
+        /// <value>
+        /// The source file.
+        /// </value>
+        public string SourceFile { get; }
+
+        /// <summary>
+        /// Gets the source line.
+        /// </summary>
+        /// <value>
+        /// The source line.
+        /// </value>
+        public int SourceLine { get; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="LogMessage"/> class.

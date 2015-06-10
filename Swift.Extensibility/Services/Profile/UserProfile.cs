@@ -1,20 +1,26 @@
 ﻿namespace Swift.Extensibility.Services.Profile
 {
-    public sealed class UserProfile : IUserProfile
+    /// <summary>
+    /// Represents a user profile.
+    /// </summary>
+    public sealed class UserProfile
     {
-        public string KeyMaterial
-        {
-            get;
-            private set;
-        }
+        /// <summary>
+        /// The key material for cryptographic applications.
+        /// </summary>
+        public byte[] KeyMaterial { get; }
 
-        public string UserName
-        {
-            get;
-            private set;
-        }
+        /// <summary>
+        /// The username.
+        /// </summary>
+        public string UserName { get; }
 
-        public UserProfile(string userName, string keyMaterial)
+        /// <summary>
+        /// Creates a new instance of the <see cref="UserProfile"/> class.
+        /// </summary>
+        /// <param name="userName">The username.</param>
+        /// <param name="keyMaterial">The key material for cryptographic applications.</param>
+        public UserProfile(string userName, byte[] keyMaterial)
         {
             UserName = userName;
             KeyMaterial = keyMaterial;

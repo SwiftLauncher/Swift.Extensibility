@@ -53,7 +53,7 @@ namespace Swift.Extensibility.Input
         /// <value>
         /// The execution callback.
         /// </value>
-        public Action ExecutionCallback { get; private set; }
+        public Action<DataItem> ExecutionCallback { get; private set; }
 
         /// <summary>
         /// Prevents a default instance of the <see cref="DataItem"/> class from being created.
@@ -73,6 +73,6 @@ namespace Swift.Extensibility.Input
         /// <param name="content">The content.</param>
         /// <param name="executionCallback">The execution callback.</param>
         /// <returns></returns>
-        public static DataItem Create(ISwiftExtender source, string displayTitle, string displaySubtitle = "", int id = 0, object content = null, Action executionCallback = null) => new DataItem { Source = source, Id = id, DisplayTitle = displayTitle, DisplaySubtitle = displaySubtitle, Content = content, ExecutionCallback = executionCallback };
+        public static DataItem Create(ISwiftExtender source, string displayTitle, string displaySubtitle = "", int id = 0, object content = null, Action<DataItem> executionCallback = null) => new DataItem { Source = source, Id = id, DisplayTitle = displayTitle, DisplaySubtitle = displaySubtitle, Content = content, ExecutionCallback = executionCallback };
     }
 }

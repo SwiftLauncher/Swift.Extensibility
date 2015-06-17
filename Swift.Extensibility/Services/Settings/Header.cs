@@ -13,24 +13,20 @@
         /// <summary>
         /// Gets or sets the tool tip. Can be null to hide tooltips.
         /// </summary>
-        public string ToolTip { get; }
+        public string ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the description. Can be null to hide the description.
         /// </summary>
-        public string Description { get; }
+        public string Description { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Header"/> class.
+        /// Initializes a new instance of the <see cref="Header" /> class.
         /// </summary>
         /// <param name="title">The title.</param>
-        /// <param name="tooltip">The tooltip.</param>
-        /// <param name="description">The description.</param>
-        public Header(string title, string tooltip = "", string description = "")
+        public Header(string title)
         {
             DisplayName = title;
-            ToolTip = tooltip;
-            Description = description;
         }
     }
 }

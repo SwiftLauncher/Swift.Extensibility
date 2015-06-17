@@ -13,12 +13,12 @@
         /// <summary>
         /// Gets or sets the tool tip. Can be null to hide tooltips.
         /// </summary>
-        public string ToolTip { get; }
+        public string ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the description. Can be null to hide the description.
         /// </summary>
-        public string Description { get; }
+        public string Description { get; set; }
 
         /// <summary>
         /// Gets the content.
@@ -29,18 +29,14 @@
         public object Content { get; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomSetting"/> class.
+        /// Initializes a new instance of the <see cref="CustomSetting" /> class.
         /// </summary>
         /// <param name="displayName">The display name.</param>
         /// <param name="content">The content.</param>
-        /// <param name="tooltip">The tooltip.</param>
-        /// <param name="description">The description.</param>
-        public CustomSetting(string displayName, object content, string tooltip = "", string description = "")
+        public CustomSetting(string displayName, object content)
         {
             DisplayName = displayName;
             Content = content;
-            ToolTip = tooltip;
-            Description = description;
         }
     }
 }

@@ -29,14 +29,14 @@ namespace Swift.Extensibility.Input.Functions
         public static readonly Type Input = typeof(Input);
 
         /// <summary>
-        /// The <see cref="ISwiftFunctionCallContext"/> type.
+        /// The <see cref="SwiftFunctionCallContext"/> type.
         /// </summary>
-        public static readonly Type CallContext = typeof(ISwiftFunctionCallContext);
+        public static readonly Type CallContext = typeof(SwiftFunctionCallContext);
 
         /// <summary>
         /// A list of all supported types.
         /// </summary>
-        public static readonly Type[] AllTypes = { typeof(int), typeof(float), typeof(string), typeof(Input), typeof(ISwiftFunctionCallContext) };
+        public static readonly Type[] AllTypes = { typeof(int), typeof(float), typeof(string), typeof(Input), typeof(SwiftFunctionCallContext) };
 
         /// <summary>
         /// Gets a value indicating whether the specified type if supported as a Swift function parameter.

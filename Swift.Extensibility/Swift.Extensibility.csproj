@@ -47,7 +47,7 @@
     <Compile Include="Input\DataItem.cs" />
     <Compile Include="Input\Functions\FunctionInfo.cs" />
     <Compile Include="Input\Functions\IFunctionManager.cs" />
-    <Compile Include="Input\Functions\ISwiftFunctionCallContext.cs" />
+    <Compile Include="Input\Functions\SwiftFunctionCallContext.cs" />
     <Compile Include="Input\Functions\ParameterInfo.cs" />
     <Compile Include="Input\Functions\SupportedParameterTypes.cs" />
     <Compile Include="Input\IDataItemHandler.cs" />
@@ -58,6 +58,7 @@
     <Compile Include="Input\IInputTextCompletionProvider.cs" />
     <Compile Include="Input\Functions\ISwiftFunctionSource.cs" />
     <Compile Include="Input\Input.cs" />
+    <Compile Include="InternalExtensibilityHelper.cs" />
     <Compile Include="Services\Hotkeys\KnownHotkeys.cs" />
     <Compile Include="Input\Functions\ParameterDescriptionAttribute.cs" />
     <Compile Include="Input\Functions\SwiftFunctionAttribute.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Services\Profile\IProfileProvider.cs" />
     <Compile Include="Services\Profile\UserProfile.cs" />
     <Compile Include="Services\Settings\BooleanSetting.cs" />
+    <Compile Include="Services\Settings\ButtonSetting.cs" />
     <Compile Include="Services\Settings\CustomSetting.cs" />
     <Compile Include="Services\Settings\FunctionSetting.cs" />
     <Compile Include="Services\Settings\Header.cs" />
@@ -89,6 +91,7 @@
     <Compile Include="Services\Settings\ISetting.cs" />
     <Compile Include="Services\Settings\ISettingsSource.cs" />
     <Compile Include="Services\Settings\ISettingsStore.cs" />
+    <Compile Include="Services\Settings\LinkButtonSetting.cs" />
     <Compile Include="Services\Settings\Setting.cs" />
     <Compile Include="Services\Storage\IStorageManager.cs" />
     <Compile Include="UI\FocusTargets.cs" />
@@ -101,6 +104,7 @@
     <Compile Include="UI\NavigationTargetAttribute.cs" />
     <Compile Include="UI\NavigationTargets.cs" />
     <Compile Include="UI\RegisterMenuItemResult.cs" />
+    <Compile Include="UI\RelayCommand.cs" />
     <Compile Include="UI\ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup />

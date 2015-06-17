@@ -31,7 +31,7 @@ namespace Swift.Extensibility.Services.Settings
         /// <summary>
         /// Gets or sets the default value.
         /// </summary>
-        public int DefaultValue { get; }
+        public int DefaultValue { get; set; }
 
         /// <summary>
         /// Gets the minimum value.
@@ -39,7 +39,7 @@ namespace Swift.Extensibility.Services.Settings
         /// <value>
         /// The minimum value.
         /// </value>
-        public int MinValue { get; }
+        public int MinValue { get; set; } = int.MinValue;
 
         /// <summary>
         /// Gets the maximum value.
@@ -47,7 +47,7 @@ namespace Swift.Extensibility.Services.Settings
         /// <value>
         /// The maximum value.
         /// </value>
-        public int MaxValue { get; }
+        public int MaxValue { get; set; } = int.MaxValue;
 
         /// <summary>
         /// Gets the change callback.
@@ -55,22 +55,27 @@ namespace Swift.Extensibility.Services.Settings
         /// <value>
         /// The change callback.
         /// </value>
-        public Action<int> ChangeCallback { get; }
+        public Action<int> ChangeCallback { get; set; }
 
         /// <summary>
         /// Gets or sets the display name.
         /// </summary>
-        public string DisplayName { get; }
+        public string DisplayName { get; set; }
 
         /// <summary>
         /// Gets or sets the tool tip. Can be null to hide tooltips.
         /// </summary>
-        public string ToolTip { get; }
+        public string ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the description. Can be null to hide the description.
         /// </summary>
-        public string Description { get; }
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether to use slider view.
+        /// </summary>
+        public bool UseSliderView { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="IntegerSetting"/> class.
@@ -78,21 +83,11 @@ namespace Swift.Extensibility.Services.Settings
         /// <param name="displayName">The display name.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <param name="changeCallback">The change callback.</param>
-        /// <param name="value">The value.</param>
-        /// <param name="tooltip">The tooltip.</param>
-        /// <param name="description">The description.</param>
-        /// <param name="minValue">The minimum value.</param>
-        /// <param name="maxValue">The maximum value.</param>
-        public IntegerSetting(string displayName, int defaultValue, Action<int> changeCallback, int value = 0, string tooltip = "", string description = "", int minValue = int.MinValue, int maxValue = int.MaxValue)
+        public IntegerSetting(string displayName, int defaultValue, Action<int> changeCallback)
         {
             DisplayName = displayName;
-            Value = value;
             ChangeCallback = changeCallback;
             DefaultValue = defaultValue;
-            ToolTip = tooltip;
-            Description = description;
-            MinValue = minValue;
-            MaxValue = maxValue;
         }
     }
 }

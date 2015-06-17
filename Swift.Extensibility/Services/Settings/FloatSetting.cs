@@ -31,7 +31,7 @@ namespace Swift.Extensibility.Services.Settings
         /// <summary>
         /// Gets or sets the default value.
         /// </summary>
-        public float DefaultValue { get; }
+        public float DefaultValue { get; set; }
 
         /// <summary>
         /// Gets the minimum value.
@@ -39,7 +39,7 @@ namespace Swift.Extensibility.Services.Settings
         /// <value>
         /// The minimum value.
         /// </value>
-        public float MinValue { get; }
+        public float MinValue { get; set; } = float.MinValue;
 
         /// <summary>
         /// Gets the maximum value.
@@ -47,7 +47,7 @@ namespace Swift.Extensibility.Services.Settings
         /// <value>
         /// The maximum value.
         /// </value>
-        public float MaxValue { get; }
+        public float MaxValue { get; set; } = float.MaxValue;
 
         /// <summary>
         /// Gets the change callback.
@@ -65,34 +65,24 @@ namespace Swift.Extensibility.Services.Settings
         /// <summary>
         /// Gets or sets the tool tip. Can be null to hide tooltips.
         /// </summary>
-        public string ToolTip { get; }
+        public string ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the description. Can be null to hide the description.
         /// </summary>
-        public string Description { get; }
+        public string Description { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FloatSetting"/> class.
+        /// Initializes a new instance of the <see cref="FloatSetting" /> class.
         /// </summary>
         /// <param name="displayName">The display name.</param>
-        /// <param name="defaultValue">The default value.</param>
-        /// <param name="changeCallback">The change callback.</param>
         /// <param name="value">The value.</param>
-        /// <param name="tooltip">The tooltip.</param>
-        /// <param name="description">The description.</param>
-        /// <param name="minValue">The minimum value.</param>
-        /// <param name="maxValue">The maximum value.</param>
-        public FloatSetting(string displayName, float defaultValue, Action<float> changeCallback, float value = 0, string tooltip = "", string description = "", float minValue = float.MinValue, float maxValue = float.MaxValue)
+        /// <param name="changeCallback">The change callback.</param>
+        public FloatSetting(string displayName, float value, Action<float> changeCallback)
         {
             DisplayName = displayName;
             Value = value;
             ChangeCallback = changeCallback;
-            DefaultValue = defaultValue;
-            ToolTip = tooltip;
-            Description = description;
-            MinValue = minValue;
-            MaxValue = maxValue;
         }
     }
 }

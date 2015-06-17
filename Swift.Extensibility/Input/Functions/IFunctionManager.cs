@@ -30,8 +30,9 @@ namespace Swift.Extensibility.Input.Functions
         /// <summary>
         /// Invokes the specified function with the parameters from the given input.
         /// </summary>
-        /// <param name="info">The <see cref="FunctionInfo"/> representing the function to invoke.</param>
+        /// <param name="info">The <see cref="FunctionInfo" /> representing the function to invoke.</param>
         /// <param name="input">The input to use for the parameters.</param>
-        void Invoke(FunctionInfo info, Input input);
+        /// <param name="context">The context.</param>
+        void Invoke(FunctionInfo info, Input input, SwiftFunctionCallContext context);
     }
 }

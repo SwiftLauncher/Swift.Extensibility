@@ -3,12 +3,21 @@
     /// <summary>
     /// Interface for a SwiftFunctionCallContext.
     /// </summary>
-    public interface ISwiftFunctionCallContext
+    public class SwiftFunctionCallContext
     {
         /// <summary>
         /// Gets a value indicating from where the current call was initiated.
         /// </summary>
-        FunctionCallOrigin CallOrigin { get; }
+        public FunctionCallOrigin CallOrigin { get; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SwiftFunctionCallContext"/> class.
+        /// </summary>
+        /// <param name="callOrigin">The call origin.</param>
+        public SwiftFunctionCallContext(FunctionCallOrigin callOrigin)
+        {
+            CallOrigin = callOrigin;
+        }
     }
 
     /// <summary>

@@ -66,10 +66,10 @@ namespace Swift.Extensibility.Services.Settings
         {
             if (OnClickUri.Scheme == "swift-function")
             {
-                var function = InternalExtensibilityHelper.FunctionManager.GetFunctions().FirstOrDefault(_ => _.FullName == OnClickUri.Authority);
+                var function = InternalExtensibilityHelper.FunctionManager?.GetFunctions().FirstOrDefault(_ => _.FullName == OnClickUri.Authority);
                 if (function == null) return;
                 InternalExtensibilityHelper.FunctionManager.Invoke(function,
-                    new Input.Input(OnClickUri.Authority + " " + OnClickUri.Query, OnClickUri.Authority),
+                    new Input.Input(OnClickUri.Query.TrimStart('?'), OnClickUri.Authority),
                     new Input.Functions.SwiftFunctionCallContext(Input.Functions.FunctionCallOrigin.CodeCall));
             }
             else

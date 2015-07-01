@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+    <metadata>
+        <id>Swift.Extensibility</id>
+        <version>$version$</version>
+        <title>Swift.Extensibility</title>
+        <authors>Tim Vinkemeier</authors>
+        <owners>Tim Vinkemeier</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Allows the creation of extensions for the Swift launcher.</description>
+        <copyright>Copyright ©  2015</copyright>
+        <dependencies>
+            <dependency id="Swift.Toolkit" version="1.0.0-alpha001" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="..\Swift.Extensibility\bin\Release\Swift.Extensibility.dll" target="lib\net45\Swift.Extensibility.dll" />
+        <file src="..\Swift.Extensibility\bin\Release\Swift.Extensibility.xml" target="lib\net45\Swift.Extensibility.xml" />
+    </files>
+</package>

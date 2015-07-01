@@ -3,7 +3,7 @@ $buildNumberPrefix = "0-alpha"
 
 $root = (split-path -parent $MyInvocation.MyCommand.Definition) + '\..'
 $version = [System.Reflection.Assembly]::LoadFile("$root\$project\bin\Release\$project.dll").GetName().Version
-$versionStr = "1.0.$buildNumberPrefix{0}" -f ($version.Build + 100)
+$versionStr = "1.0.$buildNumberPrefix{0}" -f ($version.Build)
 
 Write-Host "Setting .nuspec version tag to $versionStr"
 

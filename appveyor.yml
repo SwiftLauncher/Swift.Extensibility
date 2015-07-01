@@ -1,4 +1,4 @@
-version: 1.0.0-alpha1{build}
+version: 1.0.0-alpha{build}
 os: Visual Studio 2015 RC
 branches:
   only:

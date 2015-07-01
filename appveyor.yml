@@ -3,6 +3,8 @@ os: Visual Studio 2015 RC
 branches:
   only:
   - master
+install:
+- set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
 assembly_info:
   patch: true
   file: AssemblyInfo.*

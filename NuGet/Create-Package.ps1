@@ -1,9 +1,9 @@
 $project = "Swift.Extensibility"
-$revisionNumberPrefix = "0-alpha"
+$revisionNumberPrefix = "-alpha"
 
 $root = (split-path -parent $MyInvocation.MyCommand.Definition) + '\..'
 $version = [System.Reflection.Assembly]::LoadFile("$root\$project\bin\Release\$project.dll").GetName().Version
-$versionStr = "1.0.$revisionNumberPrefix{0}" -f ($version.Revision)
+$versionStr = "{0}.{1}.{2}$revisionNumberPrefix{3}" -f ($version.Major,$version.Minor,$version.Build,$version.Revision)
 
 Write-Host "Setting .nuspec version tag to $versionStr"
 

@@ -21,7 +21,7 @@ after_test:
 artifacts:
 - path: '**\Swift.Extensibility.dll'
   name: Swift.Extensibility.dll
-- path: '**\*.nupkg'
+- path: '**\Swift.Extensibility.nupkg'
 deploy:
   provider: NuGet
   api_key:
